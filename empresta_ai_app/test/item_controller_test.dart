@@ -11,12 +11,19 @@ void main() {
 
       expect(itensController.pedirEmprestado(escada), isTrue);
       expect(escada.disponivel, isFalse);
-     // expect(itensController.meusPedidos.contains(escada), isTrue);
+      //expect(itensController.meusPedidos.contains(escada), isTrue);
       expect(itensController.meusPedidos, contains(escada));
       expect(itensController.pedirEmprestado(escada), isFalse);
 
     });
 
-    test()
+    test("Não deixa pegar emprestado um item já emprestado", (){
+      final itensController = ItensController();
+      final furadeira = itensController.itens.firstWhere((i) =>
+        i.nome.startsWith("Furadeira")
+      );
+
+      expect(itensController.pedirEmprestado(furadeira), isFalse);
+    });
   });
 }
