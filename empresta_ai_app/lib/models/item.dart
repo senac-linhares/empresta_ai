@@ -3,7 +3,7 @@ class Item {
   final String nome;
   final String categoria;
   final String dono;
-  final String apartamento;
+  final String apartamento;  
   bool disponivel;
 
   //Contrutor
